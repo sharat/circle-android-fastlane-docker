@@ -1,0 +1,9 @@
+#!/bin/bash
+set -ex
+
+for API in 25 26; do
+  echo Generating Android ${API} Dockerfile
+  TAG=api-${API}-0.0.1
+  mkdir -p images/${TAG}
+  m4 -DAPI_LEVEL=${API} Dockerfile.m4 > images/${TAG}/Dockerfile
+done

@@ -1,0 +1,8 @@
+#!/bin/bash
+set -ex
+
+for API in 25 26; do
+  echo Building Android ${API} Dockerfile
+  TAG=api-${API}-0.0.1  
+  docker build -t sarathc/circle-android-fastlane:${TAG} -f images/${TAG}/Dockerfile images/${TAG}/
+done
