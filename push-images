@@ -1,8 +1,8 @@
 #!/bin/bash
 set -ex
 
-for API in 25 26; do
+for API in 25 26 27; do
   echo Pushing Android ${API} Image to DockerHub
-  TAG=api-${API}-0.0.1  
+  TAG=api-${API}-0.0.1
   docker push sarathc/circle-android-fastlane:${TAG}
 done
